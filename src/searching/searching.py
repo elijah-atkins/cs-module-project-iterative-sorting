@@ -10,12 +10,11 @@ def linear_search(arr, target):
 
 # Write an iterative implementation of Binary Search
 def binary_search(arr, target):
-    # Your code here
     #establish lowest and highest id in array
     lowest_id = 0
     highest_id = len(arr) - 1
     #set middle id, using integer division to keep value an integer and valid id
-    middle_id = highest_id // 2
+    middle_id = (highest_id + lowest_id) // 2
 
     while lowest_id <= highest_id:
         #find value of arr item in middle_id
@@ -31,7 +30,7 @@ def binary_search(arr, target):
         if guess < target:
             lowest_id = middle_id + 1
         #set new middle_id to middle_id of unknown range
-        middle_id = (lowest_id + ((highest_id - lowest_id) // 2))
+        middle_id = ((lowest_id + highest_id) // 2)
         
     return -1  # not found
 
